@@ -14,11 +14,10 @@ lxapparence<br>
 screenfetch<br>
 cmus<br>
 
-
  keys
 =================
 reload Herbstluftwm *SUPER + SHIFT + R*<br>
-open terminal (urxvt) *SUPER + T*<br>
+open terminal (termonator) *SUPER + ENTER*<br>
 close app *SUPER + SHIFT + C*<br>
 create layout *SUPER + O or U*<br>
 focus to next layout *SUPER + TAB*<br>
