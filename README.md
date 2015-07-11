@@ -4,15 +4,15 @@
 
  Applications
 =================
-Herbstluftwm
-Terminator
-Scrot
-Feh
-Compton
-htop
-lxapparence
-screenfetch
-cmus
+Herbstluftwm<br>
+Terminator<br>
+Scrot<br>
+Feh<br>
+Compton<br>
+htop<br>
+lxapparence<br>
+screenfetch<br>
+cmus<br>
 
 
  keys
