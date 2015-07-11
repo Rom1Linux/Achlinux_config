@@ -10,7 +10,7 @@ hc emit_hook reload
 
 xsetroot -solid '#2290B5'
 
-feh --bg-scale /home/romain/Images/wall.jpg
+feh --bg-scale ~/Images/wall.jpg
 compton &
 
 # remove all existing keybindings
@@ -27,9 +27,9 @@ hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-c close
 hc keybind $Mod-Return spawn terminator
 hc keybind $Mod-x spawn dmenu_run -i -nb '#000000' -nf '#FFFFFF' -sb '#2290B5' -sf '#1e1e1e'
-hc keybind XF86AudioLowerVolume spawn /home/romain/.config/herbstluftwm/volume.sh down
-hc keybind XF86AudioRaiseVolume spawn /home/romain/.config/herbstluftwm/volume.sh up
-hc keybind XF86AudioMute spawn /home/romain/.config/herbstluftwm/volume.sh mute
+hc keybind XF86AudioLowerVolume spawn ~/.config/herbstluftwm/volume.sh down
+hc keybind XF86AudioRaiseVolume spawn ~/.config/herbstluftwm/volume.sh up
+hc keybind XF86AudioMute spawn ~/herbstluftwm/volume.sh mute
 
 # basic movement
 # focusing clients
@@ -71,7 +71,7 @@ hc keybind $Mod-Control-Up      resize up +$resizestep
 hc keybind $Mod-Control-Right   resize right +$resizestep
 
 #Screenshot
-hc keybind Print spawn /home/romain/.config/herbstluftwm/screenshot.sh
+hc keybind Print spawn ~/.config/herbstluftwm/screenshot.sh
 
 # tags
 tag_names=( {1..9} )
