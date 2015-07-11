@@ -10,7 +10,7 @@ function uniq_linebuffered() {
 }
  
 {
-   conky -c /home/romain/.conkyrchtwm  | while read -r; do
+   conky -c ~/.conkyrchtwm  | while read -r; do
       echo -e "conky $REPLY";
         done > >(uniq_linebuffered) &
    childpid=$!
