@@ -17,7 +17,7 @@ cmus<br>
  keys
 =================
 reload Herbstluftwm *SUPER + SHIFT + R*<br>
-open terminal (termonator) *SUPER + ENTER*<br>
+open terminal (terminator) *SUPER + ENTER*<br>
 close app *SUPER + SHIFT + C*<br>
 create layout *SUPER + O or U*<br>
 focus to next layout *SUPER + TAB*<br>
