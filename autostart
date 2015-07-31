@@ -5,7 +5,7 @@ killall conky &
 hc() {
     herbstclient "$@"
 }
-
+hc pad 0 16 0 0 0
 hc emit_hook reload
 
 xsetroot -solid '#2290B5'
