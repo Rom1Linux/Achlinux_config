@@ -1,0 +1,31 @@
+out_to_x no
+out_to_console yes
+update_interval 1.0
+total_run_times 0
+use_spacer none
+
+TEXT
+
+^fg(\#ff4500) | ${execi 1000 cat /proc/cpuinfo | grep 'model name' | cut -c 14-28 | uniq}\
+^fg(\#ff4500) | ^i(~/.config/dzicons/cpu.xbm) ^fg(\#ccc)${cpu cpu0}%\
+^fg(\#ff4500) ^i(~/.config/dzicons/cpu.xbm) ^fg(\#ccc)${cpu cpu1}%\
+^fg(\#ff4500) ^i(~//.config/dzicons/cpu.xbm) ^fg(\#ccc)${cpu cpu2}%\
+^fg(\#ff4500) ^i(/~/.config/dzicons/cpu.xbm) ^fg(\#ccc)${cpu cpu3}%\
+^fg(\#ff4500) ^i(~/.config/dzicons/cpu.xbm) ^fg(\#ccc)${cpu cpu4}%\
+^fg(\#ff4500) ^i(~/.config/dzicons/cpu.xbm) ^fg(\#ccc)${cpu cpu5}%\
+^fg(\#ff4500) ^i(~/.config/dzicons/cpu.xbm) ^fg(\#ccc)${cpu cpu6}%\
+^fg(\#ff4500) ^i(~/.config/dzicons/cpu.xbm) ^fg(\#ccc)${cpu cpu7}%\
+^fg(\#ff4500) ^i(~/.config/dzicons/cpu.xbm) ^fg(\#ccc)${cpu cpu8}%\
+^fg(\#0489B1) | Memory ^i(~/.config/dzicons/mem.xbm) ^fg(\#ccc)$mem / 8.00Gib\
+^fg(\#ffd700) | Home ^fg(\#ccc)${fs_used_perc /home}%^fg(\#ffd700)\
+^fg(\#ffd700) | Disk_120 ^fg(\#ccc)${fs_used_perc /media/disk_120}%^fg(\#ffd700)\
+^fg(\#ffd700) | Disk_250 ^fg(\#ccc)${fs_used_perc /media/disk_250}%^fg(\#ffd700)\
+^fg(\#ffd700) | Disk_320 ^fg(\#ccc)${fs_used_perc /media/disk_320}%^fg(\#ffd700)\
+^fg(\#ffd700) | NAS ^fg(\#ccc)${fs_used_perc /media/NAS}%^fg(\#ffd700)\
+^fg(\#FFBF00) ${if_up enp2s0} ^i(~/.config/dzicons/net_wired.xbm) [enp2s0]\
+^fg(\#31B404) | ^i(~/.config/dzicons/net_up_02.xbm) Up ${upspeedf enp2s0}\
+^fg(\#DF7401) | ^i(~/.config/dzicons/net_down_02.xbm) Down ${downspeedf enp2s0}\
+^fg() ${endif}\
+^fg(\#04B4AE)| ^i(~/.config/dzicons/vol4.xbm) Vol: ${exec amixer -c 0 get Master | grep Mono: | cut -d " " -f6}\
+^fg(\#ccc) | ${time %H:%M} \
+| ${time %D}\
