@@ -9,6 +9,7 @@ Terminator<br>
 Scrot<br>
 Feh<br>
 Compton<br>
+numlockx<br>
 htop<br>
 lxapparence<br>
 screenfetch<br>
