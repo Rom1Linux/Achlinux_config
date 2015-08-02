@@ -10,8 +10,10 @@ hc emit_hook reload
 
 xsetroot -solid '#2290B5'
 
-feh --bg-scale ~/Images/wall.jpg
+feh --bg-scale ~/Images/wallpaper.jpg
 compton &
+#sudo pacman -S numlockx
+numlockx &
 
 # remove all existing keybindings
 hc keyunbind --all
