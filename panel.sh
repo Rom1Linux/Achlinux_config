@@ -1,14 +1,17 @@
 #!/bin/bash
- 
-## dzen stuff
+
+monitor=${1:-0}
+panel_height=16
 FG='#CCCCCC'
 BG='#333333'
 FONT="-*-fixed-medium-*-*-*-12-*-*-*-*-*-*-*"
- 
+
+hc pad $monitor 16 
+
 function uniq_linebuffered() {
    awk '$0 != l { print ; l=$0 ; fflush(); }' "$@"
 }
- 
+
 {
    conky -c ~/.conkyrchtwm  | while read -r; do
       echo -e "conky $REPLY";
@@ -52,4 +55,4 @@ function uniq_linebuffered() {
                   ;;
                esac
      done
-} 2> /dev/null |dzen2 -ta l -sa r -y 0 -x 0 -h 16 -w 1920 -fg $FG -bg $BG -fn $FONT &
+} 2> /dev/null |dzen2 -ta l -sa r -y 0 -x 0 -h 16 -fg $FG -bg $BG -fn $FONT &
