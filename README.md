@@ -1,6 +1,6 @@
 # My Achlinux_config
 
-![Alt text](https://lh3.googleusercontent.com/Rae5FelXefet3jlBhny9yFxIlcOlRi6kUjHjl8CYOjA=w1650-h928-no)
+![Alt text](https://drive.google.com/file/d/0B5peBKu0tF9wQ2xuUDdyU25qbE0/view?usp=sharing)
 
  Applications
 =================
