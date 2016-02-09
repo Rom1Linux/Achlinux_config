@@ -1,6 +1,6 @@
 # My Achlinux_config
 
-![Alt text](http://archlinux31.ddns.net/owncloud/index.php/s/OmOqpL9yODDiNym)
+![alt tag](http://archlinux31.ddns.net/owncloud/index.php/s/OmOqpL9yODDiNym)
 
  Applications
 =================
