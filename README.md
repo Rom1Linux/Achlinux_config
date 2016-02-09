@@ -1,6 +1,6 @@
 # My Achlinux_config
 
-![Alt text](https://drive.google.com/file/d/0B5peBKu0tF9wQ2xuUDdyU25qbE0/view?usp=sharing)
+![Alt text](https://archlinux31.ddns.net/owncloud/index.php/s/OmOqpL9yODDiNym)
 
  Applications
 =================
