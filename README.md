@@ -1,6 +1,6 @@
 # My Achlinux_config
 
-![alt tag](http://archlinux31.ddns.net/owncloud/index.php/s/OmOqpL9yODDiNym "Archlinux Screenshot")
+![alt tag](https://cloud.githubusercontent.com/assets/13186980/12925774/4286e972-cf60-11e5-9ba6-8bc7b75d4d34.jpg)
 
  Applications
 =================
