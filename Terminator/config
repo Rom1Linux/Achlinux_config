@@ -1,17 +1,20 @@
 [global_config]
-  title_transmit_fg_color = "#dadde5"
-  title_transmit_bg_color = "#1b286a"
-  title_inactive_fg_color = "#dadde5"
-  title_inactive_bg_color = "#87f2ad"
+  title_transmit_fg_color = "#458989"
+  title_transmit_bg_color = "#002b36"
+  title_inactive_fg_color = "#458989"
+  title_inactive_bg_color = "#657b83"
 
 [profiles]
   [[default]]
-    palette = "#1b286a:#223d86:#495aa5:#5976e3:#8aa4f5:#7a83a3:#aaafc4:#e0e2e9:#87f2ad:#4fdce2:#bbaf66:#6af3f9:#98aceb:#5accd1:#65edf3:#d6c546"
-    background_darkness = 0.59
+    palette = "#002b36:#3367be:#0daed4:#32ef02:#22739e:#6c71c4:#2aa198:#93a1a1:#657b83:#4cbfc4:#1266ea:#029e23:#0290f5:#6c71c4:#2aa198:#36d6e3"
+    foreground_color = "#458989"
+    background_color = "#002731"
+    cursor_color = "#458989"
+    background_darkness = 0.70
     background_type = transparent
-    foreground_color = "#dadde5"
-    background_color = "#030406"
-    cursor_color = "#dadde5"
+    font = Fixed 10
+    use_system_font=false
+    scrollbar_position=hidden
 
 [layouts]
   [[default]]
