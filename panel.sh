@@ -54,16 +54,14 @@ fi
 
 hc pad $monitor $panel_height
 
-#{
-#   conky -c /home/romain/.config/herbstluft/.conkyrchtwm  | while read -r; do
-#      echo -e "conky $REPLY";
-#        done > >(uniq_linebuffered) &
-#   childpid=$!
-#   herbstclient --idle
-#kill $childpid
-#}
-
 {
+   conky -c /home/romain/.conkyrc | while read -r; do
+      echo -e "conky $REPLY";
+        done > >(uniq_linebuffered) &
+   childpid=$!
+   herbstclient --idle
+    kill $childpid
+} | {
     ### Event generator ###
     # based on different input data (mpc, date, hlwm hooks, ...) this generates events, formed like this:
     #   <eventname>\t<data> [...]
@@ -84,8 +82,8 @@ hc pad $monitor $panel_height
     IFS=$'\t' read -ra tags <<< "$(hc tag_status $monitor)"
     visible=true
     date=""
-   # conky="" #add_conky
-    windowtitle=""
+	conky=""
+	windowtitle=""
     while true ; do
 
         ### Output ###
@@ -114,7 +112,7 @@ hc pad $monitor $panel_height
                     ;;
             esac
             if [ ! -z "$dzen2_svn" ] ; then
-                # clickable tags if using SVN dzen
+#	 clickable tags if using SVN dzen
                 echo -n "^ca(1,\"${herbstclient_command[@]:-herbstclient}\" "
                 echo -n "focus_monitor \"$monitor\" && "
                 echo -n "\"${herbstclient_command[@]:-herbstclient}\" "
@@ -124,9 +122,14 @@ hc pad $monitor $panel_height
                 echo -n " ${i:1} "
             fi
         done
+	conky_text_only=$(echo -n "$conky "|sed 's.\^[^(]*([^)]*)..g')
+	width=$(textwidth "$FONT" "$conky_text_only  ")
         echo -n "$separator"
         echo -n "^bg()^fg() ${windowtitle//^/^^}"
-        # small adjustments
+#add conky
+	echo -n "$separator"
+	echo -n "^p(-$width)$conky"
+# small adjustments
         right="$separator^bg() $date $separator"
         right_text_only=$(echo -n "$right" | sed 's.\^[^(]*([^)]*)..g')
         # get width of right aligned text.. and add some space..
@@ -180,12 +183,10 @@ hc pad $monitor $panel_height
             focus_changed|window_title_changed)
                 windowtitle="${cmd[@]:2}"
                 ;;
-#	    conky*)
-#	    conky="${cmd[@]:1"
-#		;;
-            #player)
-            #    ;;
-        esac
+		conky*)
+		conky="${cmd[@]:1}"
+		;;
+esac
     done
 
     ### dzen2 ###
