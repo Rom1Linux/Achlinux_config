@@ -55,7 +55,7 @@ fi
 hc pad $monitor $panel_height
 
 {
-   conky -c /home/romain/.conkyrc | while read -r; do
+   conky -c ~/.conkyrc | while read -r; do
       echo -e "conky $REPLY";
         done > >(uniq_linebuffered) &
    childpid=$!
@@ -80,8 +80,8 @@ hc pad $monitor $panel_height
     kill $childpid
 } 2> /dev/null |{
     IFS=$'\t' read -ra tags <<< "$(hc tag_status $monitor)"
-    visible=true
-    date=""
+	visible=true
+	date=""
 	conky=""
 	windowtitle=""
     while true ; do
@@ -122,13 +122,14 @@ hc pad $monitor $panel_height
                 echo -n " ${i:1} "
             fi
         done
-	conky_text_only=$(echo -n "$conky "|sed 's.\^[^(]*([^)]*)..g')
-	width=$(textwidth "$FONT" "$conky_text_only  ")
+#	conky_text_only=$(echo -n "$conky "|sed 's.\^[^(]*([^)]*)..g')
+#	width=$(textwidth "$FONT" "$conky_text_only  ")
         echo -n "$separator"
         echo -n "^bg()^fg() ${windowtitle//^/^^}"
 #add conky
+	echo -n "$conky"
 	echo -n "$separator"
-	echo -n "^p(-$width)$conky"
+	echo -n "^p(_RIGHT)$conky"
 # small adjustments
         right="$separator^bg() $date $separator"
         right_text_only=$(echo -n "$right" | sed 's.\^[^(]*([^)]*)..g')
@@ -184,7 +185,7 @@ hc pad $monitor $panel_height
                 windowtitle="${cmd[@]:2}"
                 ;;
 		conky*)
-		conky="${cmd[@]:1}"
+		conky="${cmd[@]:2}"
 		;;
 esac
     done
@@ -193,6 +194,6 @@ esac
     # After the data is gathered and processed, the output of the previous block
     # gets piped to dzen2.
 
-} 2> /dev/null | dzen2 -w $panel_width -x $x -y $y -fn "$font" -h $panel_height \
+} 2> conky | dzen2 -w $panel_width -x $x -y $y -fn "$font" -h $panel_height \
     -e 'button3=;button4=exec:herbstclient use_index -1;button5=exec:herbstclient use_index +1' \
     -ta l -bg "$bgcolor" -fg '#efefef'
